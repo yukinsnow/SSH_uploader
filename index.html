@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>SSH upload tools</title>
+    <link rel="stylesheet" type="text/css" href="css/photon.min.css">
+  </head>
+  <body>
+    <!-- Wrap your entire app inside .window -->
+    <div class="window">
+      <div class="window-content">
+        <div class="padded-more">
+          <h2>Welcome to use</h2>
+
+            <div class="form-group">
+              <label><span class="icon icon-cloud" style="margin-right: 2px;"></span>Server</label>
+              <input type="text" class="form-control" placeholder="Server" id="server">
+            </div>
+            <div class="form-group">
+              <label><span class="icon icon-user" style="margin-right: 2px;"></span>Username</label>
+              <input type="text" class="form-control" placeholder="Username" id="username">
+            </div>
+            <div class="form-group">
+              <label><span class="icon icon-lock" style="margin-right: 2px;"></span>Password</label>
+              <input type="password" class="form-control" placeholder="Password" id="password">
+            </div>
+            <div class="form-group">
+              <div class="btn btn-positive" id="connectButton">Connect</div><span style="margin-left: 5px;"><div class="btn btn-negative" id="disconnectButton">Disconnect</div></span>
+            </div>
+            <div class="form-group">
+                <label>Select local file:<span style="margin-left: 10px;"><div class="btn btn-default" id="selectButton">Select</div></span></label>
+              <input class="form-control" rows="1" id="localPath" placeholder="/home/example.js"></input>
+            </div>
+            <div class="form-group">
+              <label>Remote path:</label>
+              <input class="form-control" rows="1" id="remotePath" placeholder="/root"></input>
+            </div>
+            <div class="form-group">
+              <div class="btn btn-primary" id="uploadButton">Upload</div>
+            </div>
+
+        </div>
+      </div>
+      <footer class="toolbar toolbar-footer">
+        <div class="toolbar-actions">
+          <div id="statusBar"><span class="icon icon-record" style="color:#fc605b;margin-right: 2px;"></span>Server not connected<span class="pull-right"><span class="icon icon-github"></span>Yukinsnow</span></div>
+        </div>
+      </footer>
+    </div>
+
+
+
+    <script>
+      // You can also require other files to run in this process
+      require('./renderer.js')
+    </script>
+
+  </body>
+</html>

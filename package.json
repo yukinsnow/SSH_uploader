@@ -1,0 +1,53 @@
+{
+  "name": "SSH_uploader",
+  "productName": "SSH_uploader",
+  "description": "A simple tool for uploading files to the server",
+  "keywords": ["ssh"],
+  "main": "./main.js",
+  "version": "1.0.0",
+  "author": "yukinsnow",
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "lint": "echo \"No linting configured\""
+  },
+  "dependencies": {
+    "electron-ssh2": "^0.1.2"
+  },
+  "devDependencies": {
+    "electron": "11.0.0-beta.20",
+    "@electron-forge/cli": "6.0.0-beta.52",
+    "@electron-forge/maker-deb": "6.0.0-beta.52",
+    "@electron-forge/maker-rpm": "6.0.0-beta.52",
+    "@electron-forge/maker-squirrel": "6.0.0-beta.52",
+    "@electron-forge/maker-zip": "6.0.0-beta.52"
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {
+        "icon": "./icon"
+      },
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel"
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
+  }
+}
