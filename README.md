@@ -21,9 +21,9 @@ npm start
 1. Enter the server address, account and password
 <img src='https://github.com/yukinsnow/SSH_uploader/blob/main/img/1.png?raw=true' height='480'/>
 2. Click connect
-<img src='https://github.com/yukinsnow/SSH_uploader/blob/main/img/2.png?raw=true' height='720'/>
+<img src='https://github.com/yukinsnow/SSH_uploader/blob/main/img/2.png?raw=true' height='480'/>
 3. Select the file to upload
-<img src='https://github.com/yukinsnow/SSH_uploader/blob/main/img/3.png?raw=true' height='720'/>
+<img src='https://github.com/yukinsnow/SSH_uploader/blob/main/img/3.png?raw=true' height='480'/>
 4. Enter the folder to be uploaded to the server
-<img src='https://github.com/yukinsnow/SSH_uploader/blob/main/img/4.png?raw=true' height='720'/>
+<img src='https://github.com/yukinsnow/SSH_uploader/blob/main/img/4.png?raw=true' height='480'/>
 5. Click Upload
