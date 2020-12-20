@@ -1,11 +1,12 @@
 {
   "name": "SSH_uploader",
   "productName": "SSH_uploader",
-  "description": "A simple tool for uploading files to the server",
-  "keywords": ["ssh"],
-  "main": "./main.js",
   "version": "1.0.0",
-  "author": "yukinsnow",
+  "description": "A simple tool for uploading files to the server",
+  "keywords": [
+    "ssh"
+  ],
+  "main": "src/index.js",
   "scripts": {
     "start": "electron-forge start",
     "package": "electron-forge package",
@@ -13,30 +14,20 @@
     "publish": "electron-forge publish",
     "lint": "echo \"No linting configured\""
   },
-  "dependencies": {
-    "electron-ssh2": "^0.1.2"
-  },
-  "devDependencies": {
-    "electron": "11.0.0-beta.20",
-    "@electron-forge/cli": "6.0.0-beta.52",
-    "@electron-forge/maker-deb": "6.0.0-beta.52",
-    "@electron-forge/maker-rpm": "6.0.0-beta.52",
-    "@electron-forge/maker-squirrel": "6.0.0-beta.52",
-    "@electron-forge/maker-zip": "6.0.0-beta.52"
-  },
+  "author": "yukinsnow",
+  "license": "MIT",
   "config": {
     "forge": {
       "packagerConfig": {
-        "icon": "./icon"
+        "icon": "src/icon"
       },
       "makers": [
         {
-          "name": "@electron-forge/maker-squirrel"
-        },
-        {
           "name": "@electron-forge/maker-zip",
           "platforms": [
-            "darwin"
+            "darwin",
+            "linux",
+            "win32"
           ]
         },
         {
@@ -49,5 +40,17 @@
         }
       ]
     }
+  },
+  "dependencies": {
+    "electron-ssh2": "0.1.2",
+    "upath": "^2.0.1"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.54",
+    "@electron-forge/maker-deb": "^6.0.0-beta.54",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.54",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.54",
+    "@electron-forge/maker-zip": "^6.0.0-beta.54",
+    "electron": "11.1.0"
   }
 }

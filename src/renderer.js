@@ -4,6 +4,7 @@
 
 const { dialog } = require('electron').remote
 var Client = require('electron-ssh2').Client
+const upath = require('upath')
 
 const selectButton = document.getElementById('selectButton')
 const connectButton = document.getElementById('connectButton')
@@ -29,10 +30,16 @@ disconnectButton.addEventListener('click', function(e) {
 })
 
 uploadButton.addEventListener('click', function(e) {
+  //There is a case when people modified textfield after selected, so the final path shoule be text in textbox.
+  localPath = document.getElementById('localPath').value 
+  //convert Windows path
+  localPath = upath.toUnix(localPath)
   var str = localPath.split('/')
   var files = str[str.length-1]
   remotePath = document.getElementById('remotePath').value+'/'+files
   Upload(localPath,remotePath)
+  console.log(localPath)
+  console.log(remotePath)
 })
 
 function OpenDialog()
@@ -80,8 +87,6 @@ function Upload(localPath, remotePath)
       statusBar.innerHTML = '<span class="icon icon-record" style="color:##34c84a;margin-right: 2px;"></span>Server connected File upload failed<span class="icon icon-cancel" style="color:#fc605b;margin-left: 2px;"></span><span class="pull-right"><span class="icon icon-github"></span>Yukinsnow</span>'
 		}else{
 			sftp.fastPut(localPath, remotePath, function(err, result) {
-        console.log(localPath)
-        console.log(remotePath)
         statusBar.innerHTML = '<span class="icon icon-record" style="color:#34c84a;margin-right: 2px;"></span>Server connected File uploaded successfully<span class="icon icon-check" style="color:#34c84a;margin-left: 2px;"></span><span class="pull-right"><span class="icon icon-github"></span>Yukinsnow</span>'
 				sftp.end()
 			})
